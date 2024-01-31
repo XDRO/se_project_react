@@ -275,7 +275,6 @@ function App() {
         )}
         {activeModal === "edit" && (
           <EditProfileModal
-            currentUser={currentUser}
             onClose={handleCloseModal}
             setCurrentUser={setCurrentUser}
             onEdit={onEdit}
