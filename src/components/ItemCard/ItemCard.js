@@ -6,6 +6,8 @@ const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
     onCardLike({ id: item._id, isLiked: !item.isLiked });
   };
 
+  console.log(loggedIn);
+
   const likeButtonClassName = `card_like ${
     item.isLiked ? "card_like-visible" : "card_like-hidden"
   }`;

@@ -212,6 +212,7 @@ function App() {
             <Profile
               currentUser={currentUser}
               clothingItems={clothingItems}
+              loggedIn={loggedIn}
               setCurrentUser={setCurrentUser}
               onCardLike={handleCardLike}
               isLoggedIn={isLoggedIn}

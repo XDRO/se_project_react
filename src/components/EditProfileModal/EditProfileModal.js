@@ -3,8 +3,10 @@ import closeButton from "../../images/grey-x-button.svg";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import * as api from "../../utils/api";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const EditProfileModal = ({ currentUser, onEdit, onClose }) => {
+  // currentUser should be taken from the context
   const history = useHistory();
   console.log(currentUser);
   const [values, setValues] = useState({

@@ -10,6 +10,7 @@ const Profile = ({
   handleOpenModal,
   currentUser,
   setCurrentUser,
+  loggedIn,
 }) => {
   return (
     <div className="profile">
@@ -35,6 +36,7 @@ const Profile = ({
           onSelectCard={onSelectCard}
           onCardLike={onCardLike}
           currentUser={currentUser}
+          loggedIn={loggedIn}
         />
       </div>
     </div>

@@ -5,6 +5,7 @@ const ClothesSection = ({
   onSelectCard,
   clothingItems,
   onCardLike,
+  loggedIn,
 }) => {
   const isOwn = currentUser._id;
 
@@ -17,6 +18,7 @@ const ClothesSection = ({
     <div className="profile__card-items">
       {filteredCards.map((item) => (
         <ItemCard
+          loggedIn={loggedIn}
           item={item}
           onSelectCard={onSelectCard}
           key={item._id}
