@@ -1,4 +1,5 @@
 import { baseUrl } from "./api";
+import { processServerResponse } from "./utils";
 
 export const register = async ({ name, email, password, avatar }) => {
   try {
@@ -11,7 +12,9 @@ export const register = async ({ name, email, password, avatar }) => {
       body: JSON.stringify({ name, email, password, avatar }),
     });
 
-    const userData = await res.json();
+    // const userData = await res.json();\
+    const userData = await processServerResponse(res);
+
     console.log("Full response from server:", res);
     console.log("User data received after registration:", userData);
 
@@ -26,24 +29,28 @@ export const register = async ({ name, email, password, avatar }) => {
   }
 };
 
-// project 14 login
 export const authorize = async (email, password) => {
-  const res = await fetch(`${baseUrl}/signin`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  });
+  try {
+    const res = await fetch(`${baseUrl}/signin`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
 
-  const userData = await res.json();
+    const userData = await processServerResponse(res);
 
-  if (userData.token) {
-    localStorage.setItem("token", userData.token);
-    return userData.token;
-  } else {
-    throw new Error("Error from authorize: ", userData);
+    if (userData.token) {
+      localStorage.setItem("token", userData.token);
+      return userData.token;
+    } else {
+      throw new Error("Error from authorize: ", userData);
+    }
+  } catch (error) {
+    console.error("Error from authorize: ", error);
+    throw error;
   }
 };
 
@@ -61,7 +68,8 @@ export const checkToken = async () => {
         },
       });
 
-      const userData = await res.json();
+      const userData = await processServerResponse(res);
+      console.log("User data received after token check:", userData);
 
       if (userData.data) {
         return userData.data;
