@@ -22,6 +22,7 @@ import {
   likeCard,
   likeRemove,
   setUserInfo,
+  editProfile,
 } from "../../utils/api";
 
 // import login and register modals here

@@ -6,7 +6,6 @@ import * as api from "../../utils/api";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const EditProfileModal = ({ onEdit, onClose }) => {
-  // currentUser should be taken from the context
   const { currentUser } = React.useContext(CurrentUserContext);
 
   const [values, setValues] = useState({
@@ -24,24 +23,11 @@ const EditProfileModal = ({ onEdit, onClose }) => {
     }
   };
 
-  const onEditSave = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const res = await api.editProfile(values, token);
-      return res.data;
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const newInfo = await onEditSave();
-      setValues(newInfo);
-      onEdit(onEdit);
+      onEdit(values);
       onClose(onClose);
-      return newInfo;
     } catch (error) {
       console.log("Error updating profile:", error);
     }
