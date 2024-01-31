@@ -16,25 +16,20 @@ const Login = ({ isLoggedIn, handleCloseModal, onClick }) => {
     setValues({ ...values, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!values.email || !values.password) {
-      return;
+    try {
+      const token = await auth.authorize(values.email, values.password);
+      if (!values.email || !values.password) {
+        return;
+      }
+      console.log("Login successful. Token: ", token);
+      isLoggedIn(true);
+      history.push("/profile");
+    } catch (error) {
+      console.error("Login failed: ", error);
+      history.push("/register");
     }
-    auth
-      .authorize(values.email, values.password)
-      .then(() => {
-        isLoggedIn(true);
-        history.push("/profile");
-      })
-      .catch((error) => {
-        if (error) {
-          console.log(error);
-          history.push("/register");
-        } else {
-          console.error(error.message);
-        }
-      });
   };
 
   useEffect(() => {

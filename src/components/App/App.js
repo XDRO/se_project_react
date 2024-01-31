@@ -175,6 +175,7 @@ function App() {
         .checkToken(token)
         .then((userData) => {
           setCurrentUser(userData);
+          isLoggedIn(true);
         })
         .catch((error) => {
           console.log(error);
