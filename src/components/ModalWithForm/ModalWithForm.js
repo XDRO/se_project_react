@@ -1,5 +1,4 @@
 import "./ModalWithForm.css";
-
 const ModalWithForm = ({
   children,
   buttonText = "Add garment",
@@ -13,9 +12,9 @@ const ModalWithForm = ({
   return (
     <div className="modal__overlay" ref={ref}>
       <div className={`modal modal_type_${name}`}>
-        <div className="modal__content">
+        <div className={`modal__content modal__content_${name}`}>
           <button
-            className="modal__close-button"
+            className={`modal__close-button modal__close-button_${name}`}
             type="button"
             onClick={onClose}
           ></button>

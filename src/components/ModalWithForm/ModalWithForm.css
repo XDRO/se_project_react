@@ -256,3 +256,29 @@
 } */
 
 /* ^Delete modal css^ */
+
+/* .modal_type_profile {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 280px;
+  width: 670px;
+  position: fixed;
+  top: 25%;
+} */
+
+.modal__content_profile {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 280px;
+  width: 670px;
+  position: fixed;
+  top: 25%;
+}
+
+.modal__close-button_profile {
+  position: absolute;
+  left: 7%;
+  top: 0%;
+}

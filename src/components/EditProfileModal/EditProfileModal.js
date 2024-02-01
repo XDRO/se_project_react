@@ -1,11 +1,8 @@
-import "../ModalWithForm/ModalWithForm.css";
-import closeButton from "../../images/grey-x-button.svg";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import * as api from "../../utils/api";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const EditProfileModal = ({ onEdit, onClose }) => {
+const EditProfileModal = ({ name, onEdit, onClose }) => {
   const { currentUser } = React.useContext(CurrentUserContext);
 
   const [values, setValues] = useState({
@@ -32,45 +29,36 @@ const EditProfileModal = ({ onEdit, onClose }) => {
       console.log("Error updating profile:", error);
     }
   };
-
   return (
-    <div className="modal__overlay">
-      <div className={`modal profile`}>
-        <div className="profile__content">
-          <div className="profile__modal-container">
-            <button className="profile__modal-close" type="button">
-              <img src={closeButton} onClick={onClose} alt="Close Button"></img>
-            </button>
-          </div>
-          <div className="profile__modal-form">
-            <p className="profile__modal-title">Change Profile Data</p>
-            <label>{"Name "}</label>
-            <input
-              required
-              className="profile__modal-input"
-              name="name"
-              type="text"
-              value={values.name}
-              onChange={handleChange}
-            />
-            <label>{"Avatar URL "}</label>
-            <input
-              required
-              className="profile__modal-input"
-              name="avatar"
-              type="URL"
-              value={values.avatar}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="profile__modal-options">
-            <button className="profile__modal-save" onClick={handleSubmit}>
-              Save Changes
-            </button>
-          </div>
-        </div>
+    <ModalWithForm
+      title="Change Profile Data"
+      onClose={onClose}
+      buttonText={<div onClick={handleSubmit}>Save Changes</div>}
+      name={`profile`}
+    >
+      <div className="profile__modal-form">
+        <label htmlFor="name">{"Name "}</label>
+        <input
+          id="name"
+          required
+          className="profile__modal-input"
+          name="name"
+          type="text"
+          value={values.name}
+          onChange={handleChange}
+        />
+        <label htmlFor="avatar">{"Avatar URL "}</label>
+        <input
+          id="avatar"
+          required
+          className="profile__modal-input"
+          name="avatar"
+          type="URL"
+          value={values.avatar}
+          onChange={handleChange}
+        />
       </div>
-    </div>
+    </ModalWithForm>
   );
 };
 
