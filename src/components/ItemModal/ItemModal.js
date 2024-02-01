@@ -6,13 +6,8 @@ const ItemModal = ({ currentUser, selectedCard, onClose, onClick }) => {
   const itemDeleteButtonClassName = `modal__button_delete ${
     isOwn ? "modal__button-delete_visible" : "modal__button-delete_hidden"
   }`;
-  // work on positioning these correctly
   return (
-    <ModalWithForm
-      name={`item`}
-      // title={}
-      showForm={false}
-    >
+    <ModalWithForm name={`item`} showForm={false}>
       <div className="modal__card-image_container">
         <div className={`modal__title_item`}>
           Weather Type: {selectedCard.weather}
@@ -69,4 +64,30 @@ export default ItemModal;
   </div>
 </div>
 </div> */
+}
+
+{
+  /* <ModalWithForm
+      name={`item`}
+      // title={}
+      showForm={false}
+    >
+      <div className="modal__card-image_container">
+        <div className={`modal__title_item`}>
+          Weather Type: {selectedCard.weather}
+        </div>
+        <div className="modal__selected-card_name">{selectedCard.name}</div>
+        <img
+          className="modal__image"
+          src={selectedCard.imageUrl}
+          alt={selectedCard.name}
+        ></img>
+        <div
+          className={itemDeleteButtonClassName}
+          onClick={() => onClick("delete")}
+        >
+          Delete Item
+        </div>
+      </div>
+    </ModalWithForm> */
 }
