@@ -136,26 +136,6 @@ function App() {
   };
 
   useEffect(() => {
-    if (!activeModal) return;
-    const handleEscClose = (e) => {
-      if (e.key === "Escape") {
-        handleCloseModal();
-      }
-    };
-    const handleOverlayClick = (e) => {
-      if (e.target.classList.contains("modal")) {
-        handleCloseModal();
-      }
-    };
-    document.addEventListener("mousedown", handleOverlayClick);
-    document.addEventListener("keydown", handleEscClose);
-    return () => {
-      document.removeEventListener("keydown", handleEscClose);
-      document.removeEventListener("mousedown", handleOverlayClick);
-    };
-  }, [activeModal]);
-
-  useEffect(() => {
     getWeatherAndLocation()
       .then((data) => {
         const temperature = parseWeatherData(data);
