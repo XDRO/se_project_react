@@ -5,6 +5,7 @@ const ModalWithForm = ({
   title,
   onClose,
   name,
+  showForm = true,
   state = { disabled: true },
   ref,
   onSubmit,
@@ -18,18 +19,21 @@ const ModalWithForm = ({
             type="button"
             onClick={onClose}
           ></button>
-          <h3 className="modal__title">{title}</h3>
+          <h3 className={`modal__title modal__title_${name}`}>{title}</h3>
+          {showForm && (
+            <form className="modal__add-form" onSubmit={onSubmit}>
+              {children}
+              <button
+                className={`modal__button modal__button_${name}`}
+                // disabled={state}
+                type="submit"
+              >
+                {buttonText}
+              </button>
+            </form>
+          )}
 
-          <form className="modal__add-form" onSubmit={onSubmit}>
-            {children}
-            <button
-              className="modal__add-form_button"
-              // disabled={state}
-              type="submit"
-            >
-              {buttonText}
-            </button>
-          </form>
+          {!showForm && children}
         </div>
       </div>
     </div>

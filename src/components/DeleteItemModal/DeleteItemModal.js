@@ -1,9 +1,28 @@
-import closeButton from "../../images/grey-x-button.svg";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
 const DeleteItemModal = ({ onClose, deleteCard }) => {
   return (
-    <div className="modal__overlay">
-      <div className={`modal delete`}>
+    <ModalWithForm
+      title="Are you sure you want to delete this item? This action is irreversible"
+      onClose={onClose}
+      buttonText={<div>Cancel</div>}
+      name={`delete`}
+    >
+      <button className="delete_btn delete_btn-confirm" onClick={deleteCard}>
+        Yes, delete item
+      </button>
+      <button className="delete_btn delete_btn-cancel" onClick={onClose}>
+        Cancel
+      </button>
+    </ModalWithForm>
+  );
+};
+
+export default DeleteItemModal;
+
+{
+  /* <div className="modal__overlay">
+       <div className={`modal delete`}>
         <div className="delete__modal">
           <div className="delete__modal-header">
             <button className="delete__modal-close">
@@ -29,9 +48,9 @@ const DeleteItemModal = ({ onClose, deleteCard }) => {
             </button>
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
+      </div> 
+</div> */
+}
 
-export default DeleteItemModal;
+{
+}
