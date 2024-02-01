@@ -26,6 +26,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
         <img
           className={likeButtonClassName}
           src={heartButton}
+          alt="like button"
           onClick={handleLike}
         />
       ) : (
