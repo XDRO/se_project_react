@@ -12,12 +12,14 @@ const ItemModal = ({ currentUser, selectedCard, onClose, onClick }) => {
         <div className={`modal__title_item`}>
           Weather Type: {selectedCard.weather}
         </div>
-        <div className="modal__selected-card_name">{selectedCard.name}</div>
-        <img
-          className="modal__image"
-          src={selectedCard.imageUrl}
-          alt={selectedCard.name}
-        ></img>
+        <div className="modal__elements-container">
+          <div className="modal__selected-card_name">{selectedCard.name}</div>
+          <img
+            className="modal__image"
+            src={selectedCard.imageUrl}
+            alt={selectedCard.name}
+          ></img>
+        </div>
         <div
           className={itemDeleteButtonClassName}
           onClick={() => onClick("delete")}

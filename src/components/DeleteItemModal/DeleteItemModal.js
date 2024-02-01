@@ -3,11 +3,12 @@ import "../ModalWithForm/ModalWithForm.css";
 const DeleteItemModal = ({ onClose, deleteCard }) => {
   return (
     <ModalWithForm
-      title="Are you sure you want to delete this item? This action is irreversible"
+      title="Are you sure you want to delete this item?"
       onClose={onClose}
-      buttonText={<div>Cancel</div>}
       name={`delete`}
+      showForm={false}
     >
+      <h3 className="delete_modal-text"> This action is irreversible.</h3>
       <button className="delete_btn delete_btn-confirm" onClick={deleteCard}>
         Yes, delete item
       </button>

@@ -183,6 +183,13 @@
   cursor: pointer;
 }
 
+.modal__elements-container {
+  display: grid;
+  width: 326px;
+  justify-items: center;
+  align-content: center;
+}
+
 .modal__close-button_item {
   position: relative;
   left: 30%;
@@ -203,13 +210,12 @@
 }
 
 .modal__selected-card_name {
-  display: inline-block;
-  width: 23px;
+  display: flex;
+  justify-content: center;
   padding: 2px 12px;
   position: relative;
   z-index: 999;
-  bottom: 100%;
-  left: 20%;
+  top: 35px;
   background-color: #fff;
   color: rgba(0, 0, 0, 0.6);
   font-family: Cabinet Grotesk;
@@ -232,6 +238,60 @@
   position: relative;
   bottom: 10%;
   right: 28%;
+}
+
+/* delete */
+.modal__content_delete {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  width: 670px;
+  height: 280px;
+}
+
+.modal__close-button_delete {
+  position: relative;
+  bottom: 70%;
+}
+
+.modal__title_delete {
+  display: flex;
+  justify-content: center;
+}
+
+.delete_modal-text {
+  position: relative;
+  bottom: 60%;
+}
+
+.delete_btn-confirm {
+  color: #ff4d00;
+  background: none;
+  border: none;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  position: relative;
+  bottom: 60%;
+  cursor: pointer;
+}
+
+.delete_btn-cancel {
+  background: none;
+  border: none;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  cursor: pointer;
 }
 
 /* .modal__delete-button_container {
