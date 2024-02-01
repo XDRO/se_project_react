@@ -7,7 +7,7 @@ const ItemModal = ({ currentUser, selectedCard, onClose, onClick }) => {
     isOwn ? "modal__button-delete_visible" : "modal__button-delete_hidden"
   }`;
   return (
-    <ModalWithForm name={`item`} showForm={false}>
+    <ModalWithForm name={`item`} showForm={false} onClose={onClose}>
       <div className="modal__card-image_container">
         <div className={`modal__title_item`}>
           Weather Type: {selectedCard.weather}

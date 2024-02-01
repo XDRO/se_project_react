@@ -32,32 +32,16 @@ const Login = ({ isLoggedIn, handleCloseModal, onClick }) => {
     }
   };
 
-  useEffect(() => {
-    const listener = (event) => {
-      if (event.code === "Enter" || event.code === "NumpadEnter") {
-        console.log("Enter Key was pressed");
-        event.preventDefault();
-        handleSubmit(event);
-      }
-    };
-    document.addEventListener("keydown", listener);
-    return () => {
-      document.removeEventListener("keydown", listener);
-    };
-  }, [handleSubmit]);
-
   return (
     <ModalWithForm
       title="Log in"
       onClose={handleCloseModal}
-      buttonText={
-        <div onClick={handleSubmit} className="login__button-login">
-          Log in
-        </div>
-      }
+      name={`login`}
+      onSubmit={handleSubmit}
+      buttonText={<div className="login__button-login">Log in</div>}
     >
       <div className="login">
-        <div className="login__form" onSubmit={handleSubmit}>
+        <div className="login__form">
           <label>{"Email "}</label>
           <input
             className="login__form-input"

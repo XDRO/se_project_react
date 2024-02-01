@@ -180,7 +180,6 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  cursor: pointer;
 }
 
 .modal__elements-container {
@@ -193,6 +192,7 @@
 .modal__close-button_item {
   position: relative;
   left: 30%;
+  cursor: pointer;
 }
 
 .modal__card-image_container {
@@ -200,6 +200,7 @@
   position: relative;
   flex-direction: column;
   bottom: 20%;
+  width: 95%;
 }
 
 .modal__image {
@@ -257,6 +258,7 @@
 .modal__close-button_delete {
   position: relative;
   bottom: 70%;
+  cursor: pointer;
 }
 
 .modal__title_delete {
@@ -294,85 +296,6 @@
   cursor: pointer;
 }
 
-/* .modal__delete-button_container {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  bottom: 118px;
-}
-
-.modal__delete-button,
-.modal__delete-button_visible {
-  color: #ff4d00;
-  background: none;
-  border: none;
-  font-family: Cabinet Grotesk;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  cursor: pointer;
-}
-
-.modal__delete-button_hidden {
-  display: none;
-}
-
-.delete__modal {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 1rem;
-  height: 280px;
-  width: 670px;
-}
-
-.delete__modal-header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.delete__modal-close {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.delete__modal-content {
-  padding: 20px 0 50px 0;
-  font-family: Cabinet Grotesk;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 0em;
-  text-align: center;
-}
-
-.delete__modal-text {
-  margin: 0;
-}
-
-.delete__modal-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.delete_btn {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-family: Cabinet Grotesk;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.delete_btn-confirm {
-  color: #ff4d00;
-  padding-bottom: 20px;
-} */
-
 /* profile */
 .modal__content_profile {
   background-color: #fff;
@@ -388,4 +311,10 @@
   position: absolute;
   left: 7%;
   top: 0%;
+}
+
+/* login */
+.modal__content_login {
+  width: 496px;
+  height: 304px;
 }
