@@ -18,7 +18,7 @@ const ModalWithForm = ({
             className={`modal__close-button modal__close-button_${name}`}
             type="button"
             onClick={onClose}
-          ></button>
+          />
           <h3 className={`modal__title modal__title_${name}`}>{title}</h3>
           {showForm && (
             <form className="modal__add-form" onSubmit={onSubmit}>
