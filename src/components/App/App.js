@@ -257,6 +257,8 @@ function App() {
           <DeleteItemModal
             onClose={handleCloseModal}
             deleteCard={handleDeleteCard}
+            setIsLoading={setIsLoading}
+            isLoading={isLoading}
           />
         )}
         {activeModal === "edit" && (
