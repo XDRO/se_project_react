@@ -229,6 +229,8 @@ function App() {
                   handleCloseModal={handleCloseModal}
                   isLoggedIn={isLoggedIn}
                   onClick={handleOpenModal}
+                  setIsLoading={setIsLoading}
+                  isLoading={isLoading}
                 />
               </Route>
             )}
