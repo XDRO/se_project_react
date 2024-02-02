@@ -25,7 +25,6 @@ export const Modal = ({ name, onClose, children }) => {
 
   return (
     <div className={`modal modal_type_${name}`}>
-      {/* the container for the contents */}
       <div className="modal__container">
         {/* here will be anything you add as `children`*/}
         {children}

@@ -12,6 +12,8 @@ const Register = ({
   handleCloseModal,
   onClick,
   setCurrentUser,
+  setIsLoading,
+  isLoading,
 }) => {
   const history = useHistory();
 
@@ -34,6 +36,7 @@ const Register = ({
     e.preventDefault();
     console.log("Values before registration:", values);
     try {
+      setIsLoading(true);
       const userData = await auth.register(values);
       console.log("UserData received after registration:", userData);
 
@@ -43,19 +46,17 @@ const Register = ({
       history.push(`/profile/${email}`);
     } catch (err) {
       console.error("Error during registration: ", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    // add events to the form inside of the <> on ModalWithForm
     <ModalWithForm
       title="Sign up"
       onClose={handleCloseModal}
-      buttonText={
-        <div onClick={handleSubmit} className="register__profile-link">
-          Next
-        </div>
-      }
+      onSubmit={handleSubmit}
+      buttonText={isLoading ? "Registering..." : "Next"}
     >
       <div className="register">
         <div className="register__form">

@@ -220,6 +220,8 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   onClick={handleOpenModal}
                   setCurrentUser={setCurrentUser}
+                  setIsLoading={setIsLoading}
+                  isLoading={isLoading}
                 />
               </Route>
             )}

@@ -1,4 +1,5 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { Modal } from "../Modal/Modal";
 import "../ModalWithForm/ModalWithForm.css";
 const ItemModal = ({
   currentUser,
@@ -13,7 +14,7 @@ const ItemModal = ({
     isOwn ? "modal__button-delete_visible" : "modal__button-delete_hidden"
   }`;
   return (
-    <ModalWithForm name={`item`} showForm={false} onClose={onClose}>
+    <Modal name={`item`} onClose={onClose}>
       <div className="modal__card-image_container">
         <div className={`modal__title_item`}>
           Weather Type: {selectedCard.weather}
@@ -38,7 +39,7 @@ const ItemModal = ({
           <></>
         )}
       </div>
-    </ModalWithForm>
+    </Modal>
   );
 };
 
