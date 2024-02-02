@@ -246,6 +246,7 @@ function App() {
             selectedCard={selectedcard}
             onClose={handleCloseModal}
             onClick={handleOpenModal}
+            loggedIn={loggedIn}
           />
         )}
         {activeModal === "delete" && (

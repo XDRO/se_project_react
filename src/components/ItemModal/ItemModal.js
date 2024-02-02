@@ -1,8 +1,14 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
-const ItemModal = ({ currentUser, selectedCard, onClose, onClick }) => {
+const ItemModal = ({
+  currentUser,
+  selectedCard,
+  onClose,
+  onClick,
+  loggedIn,
+}) => {
   const isOwn = selectedCard.owner === currentUser._id;
-
+  console.log(loggedIn);
   const itemDeleteButtonClassName = `modal__button_delete ${
     isOwn ? "modal__button-delete_visible" : "modal__button-delete_hidden"
   }`;
@@ -20,12 +26,17 @@ const ItemModal = ({ currentUser, selectedCard, onClose, onClick }) => {
             alt={selectedCard.name}
           ></img>
         </div>
-        <div
-          className={itemDeleteButtonClassName}
-          onClick={() => onClick("delete")}
-        >
-          Delete Item
-        </div>
+
+        {loggedIn ? (
+          <div
+            className={itemDeleteButtonClassName}
+            onClick={() => onClick("delete")}
+          >
+            Delete Item
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </ModalWithForm>
   );
