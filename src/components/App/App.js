@@ -42,6 +42,8 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, isLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
   const token = localStorage.getItem("token");
 
   const currentDate = new Date().toLocaleString("default", {
@@ -260,6 +262,8 @@ function App() {
             onClose={handleCloseModal}
             setCurrentUser={setCurrentUser}
             onEdit={onEdit}
+            setIsLoading={setIsLoading}
+            isLoading={isLoading}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>
