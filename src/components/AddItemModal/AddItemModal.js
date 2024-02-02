@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-const AddItemModal = ({ handleCloseModal, setActiveModal, onAddItem }) => {
+const AddItemModal = ({
+  handleCloseModal,
+  setActiveModal,
+  onAddItem,
+  setIsLoading,
+  isLoading,
+}) => {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
   const [weatherType, setWeatherType] = useState("");
@@ -25,14 +31,21 @@ const AddItemModal = ({ handleCloseModal, setActiveModal, onAddItem }) => {
     return `${timestamp}-${randomNum}`;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onAddItem({
-      _id: generateUniqueId(),
-      name,
-      imageUrl: link,
-      weather: weatherType,
-    });
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setIsLoading(true);
+      await onAddItem({
+        _id: generateUniqueId(),
+        name,
+        imageUrl: link,
+        weather: weatherType,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -40,6 +53,7 @@ const AddItemModal = ({ handleCloseModal, setActiveModal, onAddItem }) => {
       title="New garment"
       onClose={handleCloseModal}
       setActiveModal={setActiveModal}
+      buttonText={isLoading ? "Adding..." : "Add Garment"}
       onSubmit={handleSubmit}
     >
       <div className="modal__input-container">

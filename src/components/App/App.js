@@ -240,6 +240,8 @@ function App() {
           <AddItemModal
             handleCloseModal={handleCloseModal}
             onAddItem={onAddItem}
+            setIsLoading={setIsLoading}
+            isLoading={isLoading}
           />
         )}
         {activeModal === "preview" && (
