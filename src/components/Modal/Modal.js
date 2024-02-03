@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const Modal = ({ name, onClose, children, ref }) => {
+export const Modal = ({ name, onClose, children }) => {
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
