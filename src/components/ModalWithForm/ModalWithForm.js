@@ -1,5 +1,6 @@
 import { Modal } from "../Modal/Modal";
 import "./ModalWithForm.css";
+import "../Modal/Modal.css";
 const ModalWithForm = ({
   children,
   buttonText,
