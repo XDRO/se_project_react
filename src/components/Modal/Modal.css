@@ -1,0 +1,187 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  background-color: #fff;
+  max-width: 496px;
+  width: 100%;
+  height: 436px;
+  border-radius: 20px;
+  padding: 0 28px 36px 28px;
+  font-family: Cabinet Grotesk;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal__close-button {
+  background-image: url("../../images/grey-x-button.svg");
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 20px 0 0 448px;
+  position: relative;
+  left: 28px;
+  color: #0000004d;
+  opacity: 1;
+}
+
+/* item modal content */
+.modal__content_item {
+  display: grid;
+  position: relative;
+  max-width: 670px;
+  height: 368px;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px;
+}
+/* delete modal content */
+.modal__content_delete {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  line-height: 24px;
+  height: 280px;
+}
+/* edit profile modal content */
+.modal__content_profile {
+  height: 304px;
+}
+/* login modal content */
+.modal__content_login {
+  width: 496px;
+  height: 304px;
+}
+
+/* item modal slectors */
+.modal__title_item {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 20%;
+  top: 15%;
+  background: none;
+  border: none;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.modal__elements-container {
+  display: grid;
+  width: 326px;
+  justify-items: center;
+}
+
+.modal__close-button_item {
+  position: absolute;
+  left: 32%;
+}
+
+.modal__image {
+  width: 326px;
+  height: 328px;
+  position: relative;
+  border-radius: 20px;
+}
+
+.modal__selected-card_name {
+  display: flex;
+  justify-content: center;
+  padding: 2px 12px;
+  position: relative;
+  z-index: 999;
+  top: 35px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.modal__button_delete {
+  display: flex;
+  justify-content: flex-end;
+  color: #ff4d00;
+  background: none;
+  border: none;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+  position: relative;
+  bottom: 10%;
+  right: 28%;
+}
+
+/* delete modal selctors */
+.modal__close-button_delete {
+  position: relative;
+  bottom: 70%;
+}
+
+.modal__title_delete {
+  display: flex;
+  justify-content: center;
+}
+
+.delete_modal-text {
+  position: relative;
+  bottom: 60%;
+}
+
+.delete_btn-confirm {
+  color: #ff4d00;
+  background: none;
+  border: none;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  position: relative;
+  bottom: 60%;
+  cursor: pointer;
+}
+
+.delete_btn-cancel {
+  background: none;
+  border: none;
+  font-family: Cabinet Grotesk;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  cursor: pointer;
+}

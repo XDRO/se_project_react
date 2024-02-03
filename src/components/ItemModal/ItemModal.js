@@ -1,6 +1,6 @@
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { Modal } from "../Modal/Modal";
-import "../ModalWithForm/ModalWithForm.css";
+// import "../ModalWithForm/ModalWithForm.css";
+import "../Modal/Modal.css";
 const ItemModal = ({
   currentUser,
   selectedCard,
