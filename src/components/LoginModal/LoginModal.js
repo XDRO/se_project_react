@@ -50,7 +50,7 @@ const Login = ({
     >
       <div className="login">
         <div className="login__form">
-          <label>{"Email "}</label>
+          <label htmlFor="email">{"Email "}</label>
           <input
             className="login__form-input"
             name="email"
@@ -59,7 +59,7 @@ const Login = ({
             onChange={handleChange}
             value={values.email}
           />
-          <label>{"Password "}</label>
+          <label htmlFor="password">{"Password "}</label>
           <input
             className="login__form-input"
             name="password"
