@@ -171,7 +171,7 @@ function App() {
   }, [loggedIn]);
 
   useEffect(() => {
-    const likedItems = JSON.parse(localStorage.getItem("likedItems"));
+    const likedItems = JSON.parse(localStorage.getItem("likedItems")) || {};
     console.log(likedItems);
     getItems()
       .then((items) => {
