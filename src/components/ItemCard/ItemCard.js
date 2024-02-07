@@ -1,5 +1,6 @@
 import "./ItemCard.css";
 import heartButton from "../../images/heartButton.svg";
+import { useEffect, useState } from "react";
 
 const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
   const handleLike = () => {

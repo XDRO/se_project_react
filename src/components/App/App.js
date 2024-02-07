@@ -22,7 +22,6 @@ import {
   likeCard,
   likeRemove,
   setUserInfo,
-  editProfile,
 } from "../../utils/api";
 
 // import login and register modals here
@@ -87,6 +86,11 @@ function App() {
       setClothingItems((cards) =>
         cards.map((c) => (c._id === id ? updatedCard : c))
       );
+
+      const updatedItems = JSON.parse(localStorage.getItem("likedItems")) || {};
+      updatedItems[id] = isLiked;
+      localStorage.setItem("likedItems", JSON.stringify(updatedItems));
+      console.log(localStorage);
     } catch (err) {
       console.error(err);
     }
