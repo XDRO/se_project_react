@@ -171,9 +171,16 @@ function App() {
   }, [loggedIn]);
 
   useEffect(() => {
+    const likedItems = JSON.parse(localStorage.getItem("likedItems"));
+    console.log(likedItems);
     getItems()
       .then((items) => {
-        setClothingItems(items);
+        setClothingItems(
+          items.map((item) => ({
+            ...item,
+            isLiked: likedItems[item._id] || false,
+          }))
+        );
       })
       .catch((error) => {
         console.error("Error: An error occurred", error);
