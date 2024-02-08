@@ -60,37 +60,41 @@ const Register = ({
     >
       <div className="register">
         <div className="register__form">
-          <label>{"Name "}</label>
+          <label htmlFor="name">{"Name "}</label>
           <input
             required
             className="register__form-input"
+            id="name"
             name="name"
             type="text"
             value={values.name}
             onChange={handleChange}
           />
-          <label>{"Email "}</label>
+          <label htmlFor="email">{"Email "}</label>
           <input
             required
             className="register__form-input"
+            id="email"
             name="email"
             type="email"
             value={values.email}
             onChange={handleChange}
           />
-          <label>{"Password "}</label>
+          <label htmlFor="password">{"Password "}</label>
           <input
             required
             className="register__form-input"
+            id="password"
             name="password"
             type="password"
             value={values.password}
             onChange={handleChange}
           />
-          <label>{"Avatar URL "}</label>
+          <label htmlFor="avatar">{"Avatar URL "}</label>
           <input
             required
             className="register__form-input"
+            id="avatar"
             name="avatar"
             type="URL"
             value={values.avatar}
