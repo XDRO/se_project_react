@@ -20,7 +20,7 @@ export const Modal = ({ name, onClose, children }) => {
     };
 
     document.addEventListener("mousedown", handleOverlay);
-    return () => document.addEventListener("mousedown", handleOverlay);
+    return () => document.removeEventListener("mousedown", handleOverlay);
   }, []);
 
   return (
