@@ -167,15 +167,12 @@ function App() {
   }, [loggedIn]);
 
   useEffect(() => {
-    const likedItems = JSON.parse(localStorage.getItem("likedItems")) || {};
-    console.log(likedItems);
-    console.log(localStorage);
     getItems()
       .then((items) => {
         setClothingItems(
           items.map((item) => ({
             ...item,
-            isLiked: likedItems[item._id] || false,
+            isLiked: items[item._id] || false,
           }))
         );
       })

@@ -1,14 +1,21 @@
 import "./ItemCard.css";
 import heartButton from "../../images/heartButton.svg";
+import React from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
   const handleLike = () => {
     onCardLike({ id: item._id, isLiked: !item.isLiked });
   };
+  const { currentUser } = React.useContext(CurrentUserContext);
+
   console.log(item.isLiked);
+  console.log(item.likes);
 
   const likeButtonClassName = `card_like ${
-    item.isLiked ? "card_like-visible" : "card_like-hidden"
+    item.likes.includes(currentUser._id)
+      ? "card_like-visible"
+      : "card_like-hidden"
   }`;
 
   return (
