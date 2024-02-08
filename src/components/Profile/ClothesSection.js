@@ -1,12 +1,13 @@
 import ItemCard from "../ItemCard/ItemCard";
-// conditionally render based on current owner
+import React from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 const ClothesSection = ({
-  currentUser,
   onSelectCard,
   clothingItems,
   onCardLike,
   loggedIn,
 }) => {
+  const { currentUser } = React.useContext(CurrentUserContext);
   const isOwn = currentUser._id;
 
   const filteredCards = clothingItems.filter((item) => {

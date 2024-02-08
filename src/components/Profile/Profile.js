@@ -1,5 +1,7 @@
 import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
+import React from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./Profile.css";
 const Profile = ({
   onClick,
@@ -8,7 +10,6 @@ const Profile = ({
   onCardLike,
   isLoggedIn,
   handleOpenModal,
-  currentUser,
   setCurrentUser,
   loggedIn,
 }) => {
@@ -35,7 +36,6 @@ const Profile = ({
           clothingItems={clothingItems}
           onSelectCard={onSelectCard}
           onCardLike={onCardLike}
-          currentUser={currentUser}
           loggedIn={loggedIn}
         />
       </div>
