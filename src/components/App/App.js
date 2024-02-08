@@ -130,6 +130,7 @@ function App() {
     try {
       const res = await setUserInfo(values, token);
       setCurrentUser(res.data);
+      handleCloseModal();
       return res.data;
     } catch (error) {
       console.error("Error from onEdit: ", error);

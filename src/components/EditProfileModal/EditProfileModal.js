@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const EditProfileModal = ({ onEdit, onClose, setIsLoading, isLoading }) => {
+const EditProfileModal = ({ onEdit, setIsLoading, isLoading }) => {
   const { currentUser } = React.useContext(CurrentUserContext);
 
   const [values, setValues] = useState({
@@ -28,7 +28,6 @@ const EditProfileModal = ({ onEdit, onClose, setIsLoading, isLoading }) => {
     } catch (error) {
       console.log("Error updating profile:", error);
     } finally {
-      onClose(onClose);
       setIsLoading(false);
     }
   };
@@ -37,7 +36,6 @@ const EditProfileModal = ({ onEdit, onClose, setIsLoading, isLoading }) => {
     <ModalWithForm
       title="Change Profile Data"
       onSubmit={handleSubmit}
-      onClose={onClose}
       buttonText={isLoading ? "Saving..." : "Save Changes"}
       name={`profile`}
     >
