@@ -86,11 +86,6 @@ function App() {
       setClothingItems((cards) =>
         cards.map((c) => (c._id === id ? updatedCard : c))
       );
-      // remove per reviewer
-      // const updatedItems = JSON.parse(localStorage.getItem("likedItems")) || {};
-      // updatedItems[id] = isLiked;
-      // localStorage.setItem("likedItems", JSON.stringify(updatedItems));
-      // console.log(localStorage);
     } catch (err) {
       console.error(err);
     }
@@ -173,6 +168,7 @@ function App() {
   useEffect(() => {
     const likedItems = JSON.parse(localStorage.getItem("likedItems")) || {};
     console.log(likedItems);
+    console.log(localStorage);
     getItems()
       .then((items) => {
         setClothingItems(

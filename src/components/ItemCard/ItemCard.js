@@ -1,11 +1,11 @@
 import "./ItemCard.css";
 import heartButton from "../../images/heartButton.svg";
-import { useEffect, useState } from "react";
 
 const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
   const handleLike = () => {
     onCardLike({ id: item._id, isLiked: !item.isLiked });
   };
+  console.log(item.isLiked);
 
   const likeButtonClassName = `card_like ${
     item.isLiked ? "card_like-visible" : "card_like-hidden"
