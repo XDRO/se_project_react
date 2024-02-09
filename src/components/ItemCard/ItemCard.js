@@ -9,11 +9,11 @@ const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
   };
   const { currentUser } = React.useContext(CurrentUserContext);
 
-  console.log(item.isLiked);
-  console.log(item.likes);
-
+  // console.log(item.likes);
+  // console.log(item.likes);
+  // cannot read propeties of undefined 'includes'
   const likeButtonClassName = `card_like ${
-    item.likes.includes(currentUser._id)
+    item.likes && item.likes.includes(currentUser._id)
       ? "card_like-visible"
       : "card_like-hidden"
   }`;

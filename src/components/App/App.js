@@ -64,6 +64,7 @@ function App() {
   };
 
   const handleCardLike = async ({ id, isLiked }) => {
+    console.log({ isLiked });
     try {
       let updatedCard;
       // destucture inner card values
@@ -172,7 +173,7 @@ function App() {
         setClothingItems(
           items.map((item) => ({
             ...item,
-            isLiked: items[item._id] || false,
+            isLiked: items[item._id] || true,
           }))
         );
       })
