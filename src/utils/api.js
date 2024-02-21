@@ -4,7 +4,7 @@ import { processServerResponse } from "./utils";
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "deployed-backend-url"
+    ? "https://wtwr.surnet.ca"
     : "http://localhost:3001";
 
 export async function request(url, options) {
