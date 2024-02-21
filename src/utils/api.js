@@ -1,7 +1,9 @@
 import { processServerResponse } from "./utils";
 
+import { NODE_ENV } from "../../../se_project_express/utils/config";
+
 export const baseUrl =
-  process.env.NODE_ENV === "production"
+  NODE_ENV === "production"
     ? "https://wtwr.surnet.ca"
     : "http://localhost:3001";
 
