@@ -1,10 +1,10 @@
 import { processServerResponse } from "./utils";
 
-import { NODE_ENV } from "../../../se_project_express/utils/config";
+// import { NODE_ENV } from "../../../se_project_express/utils/config";
 
 export const baseUrl =
-  NODE_ENV === "production"
-    ? "https://wtwr.surnet.ca"
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.surfnet.ca"
     : "http://localhost:3001";
 
 export async function request(url, options) {

@@ -43,6 +43,7 @@ const Register = ({
       setCurrentUser(userData);
       isLoggedIn(true);
       const email = values.email;
+      debugger;
       history.push(`/profile/${email}`);
     } catch (err) {
       console.error("Error during registration: ", err);
