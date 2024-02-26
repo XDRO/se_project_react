@@ -1,5 +1,6 @@
 import { processServerResponse } from "./utils";
 
+// somehow I think I need to import NODE_ENV
 // import { NODE_ENV } from "../../../se_project_express/utils/config";
 
 export const baseUrl =
