@@ -1,8 +1,5 @@
 import { processServerResponse } from "./utils";
 
-// somehow I think I need to import NODE_ENV
-// import { NODE_ENV } from "../../../se_project_express/utils/config";
-
 export const baseUrl =
   process.env.NODE_ENV === "production"
     ? "https://api.wtwr.surfnet.ca"
