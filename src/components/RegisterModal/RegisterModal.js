@@ -132,8 +132,8 @@ export default Register;
 // };
 
 // removed for use later
-{
-  /* <label>
+
+/* <label>
             {"Confirm Password: "}
             <input
               name="confirmPassword"
@@ -142,4 +142,3 @@ export default Register;
               onChange={handleChange}
             />
           </label> */
-}
