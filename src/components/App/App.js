@@ -165,7 +165,7 @@ function App() {
           console.log(error);
         });
     }
-  }, [loggedIn]);
+  }, [loggedIn, token]);
 
   useEffect(() => {
     getItems()
