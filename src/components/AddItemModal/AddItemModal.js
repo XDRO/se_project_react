@@ -24,19 +24,19 @@ const AddItemModal = ({
     console.log(e.target.value);
   };
 
-  // const generateUniqueId = () => {
-  //   const timestamp = new Date().getTime();
-  //   const randomNum = Math.random().toString(36).substring(2, 8);
+  const generateUniqueId = () => {
+    const timestamp = new Date().getTime();
+    const randomNum = Math.random().toString(36).substring(2, 8);
 
-  //   return `${timestamp}-${randomNum}`;
-  // };
+    return `${timestamp}-${randomNum}`;
+  };
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       setIsLoading(true);
       await onAddItem({
-        // _id: generateUniqueId(),
+        _id: generateUniqueId(),
         name,
         imageUrl: link,
         weather: weatherType,
