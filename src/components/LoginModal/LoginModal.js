@@ -85,9 +85,3 @@ const Login = ({
 };
 
 export default Login;
-
-{
-  /* <button type="submit" className="login__link">
-              Log in
-            </button> */
-}
