@@ -130,6 +130,7 @@ function App() {
     console.log(values);
     try {
       const res = await setUserInfo(values, token);
+      console.log(res);
       setCurrentUser(res.data);
       handleCloseModal();
       return res.data;

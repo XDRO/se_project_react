@@ -40,7 +40,7 @@ const Register = ({
       const userData = await auth.register(values);
       console.log("UserData received after registration:", userData);
 
-      setCurrentUser(userData);
+      setCurrentUser(userData.newUser);
       isLoggedIn(true);
       const email = values.email;
       debugger;

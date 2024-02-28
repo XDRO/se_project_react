@@ -1,7 +1,6 @@
 import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
 import React from "react";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./Profile.css";
 const Profile = ({
   onClick,

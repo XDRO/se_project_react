@@ -1,5 +1,5 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import * as auth from "../../utils/auth";
 import "./LoginModal.css";
