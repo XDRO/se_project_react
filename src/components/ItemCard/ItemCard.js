@@ -35,7 +35,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
           onClick={handleLike}
         />
       ) : (
-        <img alt="like button" />
+        <img alt="" />
       )}
     </div>
   );
