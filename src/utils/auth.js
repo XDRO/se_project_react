@@ -12,7 +12,6 @@ export const register = async ({ name, email, password, avatar }) => {
       body: JSON.stringify({ name, email, password, avatar }),
     });
 
-    // const userData = await res.json();\
     const userData = await processServerResponse(res);
 
     console.log("Full response from server:", res);
@@ -71,8 +70,8 @@ export const checkToken = async () => {
       const userData = await processServerResponse(res);
       console.log("User data received after token check:", userData);
 
-      if (userData.data) {
-        return userData.data;
+      if (userData) {
+        return userData;
       } else {
         throw new Error("Invalid token");
       }

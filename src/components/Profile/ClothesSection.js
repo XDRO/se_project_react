@@ -8,7 +8,7 @@ const ClothesSection = ({
   loggedIn,
 }) => {
   const { currentUser } = React.useContext(CurrentUserContext);
-  const isOwn = currentUser._id;
+  const isOwn = currentUser.id;
 
   const filteredCards = clothingItems.filter((item) => {
     // return item.weather;
