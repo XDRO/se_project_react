@@ -44,6 +44,3 @@ const ModalWithForm = ({
 };
 
 export default ModalWithForm;
-
-{
-}
