@@ -78,6 +78,7 @@ function App() {
         if (cardToUpdate) {
           const { data, ...props } = await likeRemove(id, token);
           updatedCard = { ...data, ...props, isLiked: false };
+          console.log({ before: cardToUpdate, after: updatedCard });
         } else {
           console.error(`Card with id ${id} not found in clothingItems.`);
           return;
