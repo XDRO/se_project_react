@@ -133,6 +133,7 @@ function App() {
       console.log(res);
       setCurrentUser(res.data);
       handleCloseModal();
+
       return res.data;
     } catch (error) {
       console.error("Error from onEdit: ", error);
@@ -174,7 +175,7 @@ function App() {
         setClothingItems(
           items.map((item) => ({
             ...item,
-            isLiked: items[item._id] || true,
+            isLiked: items[item._id] || false,
           }))
         );
       })
