@@ -4,10 +4,11 @@ import React from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
+  const { currentUser } = React.useContext(CurrentUserContext);
+
   const handleLike = () => {
     onCardLike({ id: item._id, isLiked: !item.isLiked });
   };
-  const { currentUser } = React.useContext(CurrentUserContext);
 
   const likeButtonClassName = `card_like ${
     item.likes && item.likes.includes(currentUser._id)

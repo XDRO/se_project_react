@@ -177,14 +177,14 @@ function App() {
         setClothingItems(
           items.map((item) => ({
             ...item,
-            isLiked: items[item._id] || false,
+            isLiked: item.likes.includes(currentUser._id),
           }))
         );
       })
       .catch((error) => {
         console.error("Error: An error occurred", error);
       });
-  }, []);
+  }, [currentUser._id]);
 
   return (
     <CurrentUserContext.Provider
