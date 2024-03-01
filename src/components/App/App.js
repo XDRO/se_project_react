@@ -219,7 +219,7 @@ function App() {
             <Main
               weatherTemp={temp}
               onSelectCard={handleSelectedCard}
-              setClothingItems={clothingItems}
+              clothingItems={clothingItems}
               onCardLike={handleCardLike}
               loggedIn={loggedIn}
             />

@@ -7,7 +7,7 @@ import "./Main.css";
 function Main({
   weatherTemp,
   onSelectCard,
-  setClothingItems,
+  clothingItems,
   onCardLike,
   loggedIn,
 }) {
@@ -36,7 +36,7 @@ function Main({
   };
   const weatherType = getWeatherType();
 
-  const filteredCards = setClothingItems.filter((item) => {
+  const filteredCards = clothingItems.filter((item) => {
     return item.weather === weatherType;
   });
 
