@@ -64,21 +64,21 @@ function App() {
   };
 
   const handleCardLike = async ({ id, isLiked }) => {
-    console.log({ isLiked });
     try {
       let updatedCard;
       // destucture inner card values
       if (isLiked) {
+        console.log({ isLiked });
         const { data, ...props } = await likeCard(id, token);
         updatedCard = { ...data, ...props, isLiked: true };
       } else {
+        console.log({ isLiked });
         await likeRemove(id, token);
         const cardToUpdate = clothingItems.find((c) => c._id === id);
 
         if (cardToUpdate) {
           const { data, ...props } = await likeRemove(id, token);
           updatedCard = { ...data, ...props, isLiked: false };
-          console.log({ before: cardToUpdate, after: updatedCard });
         } else {
           console.error(`Card with id ${id} not found in clothingItems.`);
           return;
